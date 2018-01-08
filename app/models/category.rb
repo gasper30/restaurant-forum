@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-  has_many :resaurants, dependent: :destory
+  has_many :restaurants, dependent: :destroy
 end
