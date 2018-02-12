@@ -1,9 +1,8 @@
 <div>
   <%= link_to 'Restaurant', admin_restaurants_path %> |
   <%= link_to 'Categories', admin_categories_path %>
-</div>
- 
 
+</div>
  
 
 
@@ -13,13 +12,17 @@
     <div class="form-group">
       <%= f.text_field :name, placeholder: "Category Name",  class: "form-control" %>
     </div>
-    <%= f.submit class: "btn btn-primary" %>
+    <%= f.submit class: "btn btn-primary" %> 
+
+    
+      
       <% if @category.errors.any? %>
       <%= @category.errors.full_messages.to_sentence %>
       <% end %>
+
+
   <% end %>
 
- 
 
 
 </div>
@@ -35,19 +38,29 @@
     <div class="col-md-12">
 
       <table class="table table-striped table-bordered">
+
         <thead>
           <tr>
             <th>#</th>
-            <th>Category Name</th>
+            <th>Category Name</th> 
+            <th>#</th>
           </tr>
+
         </thead>
         <tbody>
           <% @categories.each do |category| %>
+
           <tr>
             <th scope="row"><%= category.id %></th>
             <td><%= category.name %></td>
-          </tr>
+            <td><%= link_to 'Edit', admin_categories_path(id: category.id)%>
+            </td>
+          </tr> 
+
+
           <% end %>
+
+
         </tbody>
       </table>
 
@@ -55,7 +68,7 @@
 
   </div>
 
-  
+ 
 </div>
 
 
