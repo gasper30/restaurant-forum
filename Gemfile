@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~>0.21.0'
 end
 
 
