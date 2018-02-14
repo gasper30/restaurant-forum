@@ -4,4 +4,6 @@ class Category < ApplicationRecord
 
 
   has_many :restaurants, dependent: :destroy
+  default_scope { order(created_at: :desc) }
+
 end
